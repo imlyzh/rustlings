@@ -30,7 +30,7 @@ mod my_module {
     pub fn transformer(input: Vec<(String, Command)>) -> Vec<String> {
         input
             .into_iter()
-            .map(|(mut string, command)| match command {
+            .map(|(string, command)| match command {
                 Command::Uppercase => string.to_uppercase(),
                 Command::Trim => string.trim().to_owned(),
                 Command::Append(offset) => string + &"bar".repeat(offset),
